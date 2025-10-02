@@ -32,9 +32,10 @@ INSTALLED_APPS = [
     "django.contrib.sessions",
     "django.contrib.messages",
     "django.contrib.staticfiles",
+    "chargepoints",
     "rest_framework",
     "django_filters",
-    "chargepoints",
+    "drf_spectacular",
 ]
 
 MIDDLEWARE = [
@@ -100,11 +101,22 @@ AUTH_PASSWORD_VALIDATORS = [
 REST_FRAMEWORK = {
     "DEFAULT_PAGINATION_CLASS": "rest_framework.pagination.PageNumberPagination",
     "PAGE_SIZE": 10,
+    # Backends para filtros, búsqueda y ordenación
     "DEFAULT_FILTER_BACKENDS": [
         "django_filters.rest_framework.DjangoFilterBackend",
         "rest_framework.filters.SearchFilter",
         "rest_framework.filters.OrderingFilter",
     ],
+    "EXCEPTION_HANDLER": "exceptions.api_exception_handler",
+    "DEFAULT_SCHEMA_CLASS": "drf_spectacular.openapi.AutoSchema",
+}
+
+SPECTACULAR_SETTINGS = {
+    "TITLE": "ChargePoint API",
+    "VERSION": "1.0.0",
+    "DESCRIPTION": "API REST para gestionar ChargePoints y Connectors.",
+    "SERVE_INCLUDE_SCHEMA": False,
+    "DEFAULT_GENERATE_UNIQUE_SCHEMA_IDS": True,
 }
 
 

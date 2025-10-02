@@ -3,22 +3,48 @@ __pycache__/
 *.pyc
 *.pyo
 *.pyd
-.env
-.venv/
 *.sqlite3
 
-
 # Entornos
+.env
+.venv/
 *.env
+.envrc
+.python-version
 
 # Django
 staticfiles/
 media/
 
-# VSCode / OS
+
+# OpenAPI (generados)
+schema.yaml
+schema.json
+
+# Caches / tooling
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.pyright/
+.cache/
+.coverage
+.coverage.*
+htmlcov/
+coverage.xml
+
+# Build / distribución
+build/
+dist/
+*.egg-info/
+.eggs/
+
+# IDE / OS
 .vscode/
+.idea/
+*.code-workspace
 .DS_Store
 
 # Docker
 *.log
 postgres_data/
+docker-compose.override.yml
