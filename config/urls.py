@@ -1,6 +1,7 @@
 from django.contrib import admin
 from django.http import JsonResponse
-from django.urls import include, path
+from django.urls import include, path, reverse_lazy
+from django.views.generic import RedirectView
 
 
 def healthz(_):
@@ -8,11 +9,12 @@ def healthz(_):
 
 
 def readyz(_):
-    # Si quieres, aquí podrías chequear DB/Cache
     return JsonResponse({"status": "ready"}, status=200)
 
 
 urlpatterns = [
+    # Redirige la raíz a la documentación Swagger
+    path("", RedirectView.as_view(url=reverse_lazy("swagger-ui"), permanent=False)),
     path("healthz/", healthz, name="healthz"),
     path("readyz/", readyz, name="readyz"),
     path("admin/", admin.site.urls),

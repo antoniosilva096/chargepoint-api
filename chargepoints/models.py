@@ -64,6 +64,7 @@ class ChargePoint(SoftDeleteModel):
         indexes = [
             models.Index(fields=["status"], name="chargepoint_status_idx"),
         ]
+        ordering = ("-created_at", "id")
 
     def __str__(self) -> str:
         return f"{self.name} [{self.status}]"
