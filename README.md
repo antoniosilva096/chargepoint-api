@@ -104,7 +104,7 @@ docker compose run --rm web python manage.py createsuperuser
 ```
 
 **App disponible en ->** http://localhost:8000/
-#### Redirije a la documentación de Swagger para mejor experiencia de usuario
+#### Redirige a la documentación de Swagger para mejor experiencia de usuario
 
 ### Local (sin Docker)
 ```bash
@@ -120,6 +120,8 @@ python manage.py runserver 0.0.0.0:8000
 ## 🧩 Endpoints
 
 **Base:** `/api/v1/`
+
+**Rutas con slash opcional** para mejor DX (`/chargepoint` o `/chargepoint/`)
 
 ### ChargePoint
 - `POST   /chargepoint` — Crear
@@ -241,15 +243,13 @@ GET /api/v1/chargepoint?status=ready&search=CP&ordering=-created_at&page=1
 **Panel:** http://localhost:8000/admin/ (requiere superusuario).
 
 - Listados con `created_at`, `deleted_at`, filtros por estado y eliminado/vivo.
-- Acciones: soft delete, restore, hard delete.
 - `Connector` inline solo lectura dentro de `ChargePoint`.
-- `list_select_related/prefetch` para evitar N+1.
 
 ---
 
 ## 🧭 Versionado de API y crecimiento futuro
 
-- La API esta disponible en `/api/v1/`.
+- La API está disponible en `/api/v1/`.
 - Futuras versiones: añadir `/api/v2/` sin tocar `config/urls.py` (cada versión mantiene su propio `api/vX/urls.py`).
 - Rutas con **slash opcional** para mejor DX (`/chargepoint` y `/chargepoint/`).
 ---
