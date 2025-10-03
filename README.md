@@ -6,10 +6,10 @@ Incluye **versionado**, **paginación**, **filtros/búsqueda/ordenación**, **re
 ---
 
 ## 🧭 Tabla de contenidos
-- [Arquitectura y enfoque](#arquitectura-y-enfoque)
-- [Stack y herramientas](#stack-y-herramientas)
-- [Requisitos](#requisitos)
-- [Configuración](#configuración)
+- [🏗️ Arquitectura y enfoque](#-arquitectura-y-enfoque)
+- [🧰 Stack y herramientas](#-stack-y-herramientas)
+- [✅ Requisitos](#-requisitos)
+- [⚙️ Configuración](#-configuración)
 - [🚀 Ejecución](#-ejecución)
 - [🧩 Endpoints](#-endpoints)
 - [📚 Documentación (OpenAPI)](#-documentación-openapi)
@@ -18,7 +18,7 @@ Incluye **versionado**, **paginación**, **filtros/búsqueda/ordenación**, **re
 - [🧪 Tests](#-tests)
 - [🎲 Datos de demo (management command)](#-datos-de-demo-management-command)
 - [🔐 Admin de Django](#-admin-de-django)
-- [🧭 Versionado de API y crecimiento](#-versionado-de-api-y-crecimiento)
+- [🧭 Versionado de API y crecimiento futuro](#-versionado-de-api-y-crecimiento)
 - [🛡️ Notas de seguridad](#️-notas-de-seguridad)
 
 
